@@ -31,6 +31,7 @@ public class RemoveServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int productID = Integer.parseInt(request.getParameter("productID").trim());
+		@SuppressWarnings("unchecked")
 		List<ProductSelected> listProductSelected = (List<ProductSelected>)request.getSession().getAttribute("listProductSelected");
 		if (listProductSelected != null) {
 			for (int i = 0; i < listProductSelected.size(); i++) {
